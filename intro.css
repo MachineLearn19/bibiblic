@@ -1,0 +1,271 @@
+
+
+
+body{
+
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+}
+
+
+body::-webkit-scrollbar{
+    widows: 0.2x ;
+    background: #341f97;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:#222f3e;
+    border-radius: 1px; 
+}
+
+
+
+
+
+/*-----------------------------------------------------------------------*/
+
+.middle{
+  position: absolute;
+  top: 10%;
+justify-content: center;
+ 
+  height: 30vh;
+  width: 100%;
+ background-color:#3498db;
+
+}
+
+
+
+.text{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 5em;
+    text-align: center;
+    letter-spacing: 14px;
+    font-family: 'Bitter', serif;
+
+
+}
+
+.text::before, .text::after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.text::before{
+    color:#2d3436;
+   animation: glitch-effect 3s infinite;
+}
+
+.text::after{
+        color:#d1d8e0;
+        animation: glitch-effect s infinite;
+}
+
+@keyframes glitch-effect{
+    0%{
+        left: -2px;
+        top: -2px;
+    }
+    25%{
+        left: 2px;
+        top: 0px;
+    }
+    50%{
+        left: -1px;
+        top: 2px;
+    }
+    75%{
+        left: 1px;
+        top: -1px;
+    }
+    100%{
+        left: 0px;
+        top: -2px;
+    }
+}
+
+
+/*--------------------------*/
+
+
+.slidershow{
+    width:99%;
+     height:68vh;
+    overflow: hidden;
+    margin-top:20%;
+}
+
+.medium{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-70%);    
+}
+.navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+  
+
+}
+
+.bar{
+    width: 50px;
+    height: 10px;
+    border: 2px solid #ffffff;
+    margin:6px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.bar:hover{
+    background: #ffffff;
+}
+
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+.slide{
+    width: 20%;
+    transition: 0.6s;
+
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#r1:checked~ .s1{
+    margin-left: 0;
+
+}
+#r2:checked~ .s1{
+    margin-left: -20%;
+    
+}
+#r3:checked~ .s1{
+    margin-left: -40%;
+    
+}
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------*/
+section{
+    position: relative;
+      height: 90vh; 
+      display: flex;
+      margin-top: 55%;
+     
+}
+    
+  
+
+section .screen{
+    position: relative;
+    flex-grow: 1;
+    transition: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section .screen:hover{
+    flex-grow: 5;
+}
+
+
+section .screen:nth-child(1){
+    background:  #3498db;
+}
+
+section .screen:nth-child(2){
+    background:  #f1c40f;
+}
+
+
+section .screen .card{
+    max-width: 300px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+
+section .screen .card .imgbx{
+    max-width: 200px;
+    height: 200px;
+    border-radius : 50%;
+    overflow: hidden; 
+    margin: 0 auto;
+}
+
+section .screen .card .imgbx img{
+    max-width: 100%;
+}
+
+
+section .screen .card  a{
+   padding: 10px 20px;
+   background: #2c3e50;
+   color: white;
+   text-decoration: none;
+font-family: sans-serif;
+}
+
+.content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 100px;
+    background: #ffffff;
+    
+    
+    transition:0.5s;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+section .screen .card  a:hover~ .content,
+.content:hover{
+opacity: 1;
+visibility: visible;
+}
+section .screen:nth-child(1) .content{
+    background: #3498db;
+    }
+section .screen:nth-child(2) .content{
+background: #f1c40f;
+}
+
+
